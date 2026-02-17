@@ -1,0 +1,249 @@
+:root {
+  --Purple600: hsl(246, 80%, 60%);
+  --Orange300: hsl(15, 100%, 70%);
+  --Blue300: hsl(195, 74%, 62%);
+  --Pink400: hsl(348, 100%, 68%);
+  --Green400: hsl(145, 58%, 55%);
+  --Purple700: hsl(264, 64%, 52%);
+  --Yellow300: hsl(43, 84%, 65%);
+  --Navy950: hsl(226, 43%, 10%);
+  --Navy900: hsl(235, 46%, 20%);
+  --Purple500: hsl(235, 45%, 61%);
+  --Navy200: hsl(236, 100%, 87%);
+}
+
+:root {
+  --icon-size: 65px;
+  --avatar-size: 64px;
+  --card-gap: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--Navy950);
+  color: var(--Navy200);
+}
+
+.container {
+  padding: 1, 5rem;
+  display: grid;
+  gap: var(--card-gap);
+}
+
+.profile {
+  background: var(--Navy900);
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.profile-header {
+  background: var(--Purple600);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding-bottom: 45px;
+  padding-top: 35px;
+  margin-bottom: 15px;
+}
+
+.profile-header img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.profile-header p {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--Navy200);
+}
+
+.profile-header strong {
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.profile-tabs button {
+  background: none;
+  border: none;
+  color: var(--Purple500);
+  cursor: pointer;
+}
+
+.profile-tabs button.active,
+.profile-tabs button:hover {
+  color: #fff;
+}
+
+.cards {
+  display: grid;
+  gap: var(--card-gap);
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-bar {
+  height: 65px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: relative;
+}
+
+.card-bar img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+.card-content {
+  background: var(--Navy900);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-top: -15px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card-content:hover {
+  background: rgb(42, 42, 143);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-time h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #fff;
+}
+
+.card-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header span {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.work {
+  background: var(--Orange300);
+}
+
+.play {
+  background: var(--Blue300);
+}
+
+.study {
+  background: var(--Pink400);
+}
+
+.exercise {
+  background: var(--Green400);
+}
+
+.social {
+  background: var(--Purple700);
+}
+
+.selfcare {
+  background: var(--Yellow300);
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 9.3rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  #cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 180px;
+    gap: 1.25rem;
+  }
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  aside .profile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+  .profile-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.5rem;
+  }
+  .card-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .card-time p {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0.8;
+  }
+  .card-time h2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 300;
+  }
+  .card-header span {
+    font-size: 1rem;
+  }
+  .card-bar {
+    height: 90px;
+    padding: 1.5rem;
+  }
+}
